@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Sharp-Grotesk-SemiBold";
+    src: local("Sharp-Grotesk-SemiBold"),
+      url("../src/fonts/SharpGrotesk-SemiBold25.otf") format("truetype");
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "Sharp-Grotesk-Medium";
+    src: local("Sharp-Grotesk-Medium"),
+      url("../src/fonts/SharpGrotesk-Medium25.otf") format("truetype");
+    font-weight: medium;
+  }
+}
