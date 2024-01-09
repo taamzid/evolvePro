@@ -1,5 +1,5 @@
 import connectedImage from "../assets/connectedImage.svg";
-import connectedImageMobile from "../assets/bg-collected-final.svg";
+import connectedImageMobile from "../assets/robot-connected.svg";
 import leftArrow from "../assets/LeftArrow.svg";
 import RightArrow from "../assets/RightArrow.svg";
 import { useState } from "react";
@@ -182,8 +182,7 @@ const Connected = () => {
     {
       title: ( 
         <>
-          <h1>The Power of AI, The Touch</h1>
-          <h1>of Human Empathy</h1>
+          <h1>The Power of AI, The Touch of Human Empathy</h1>
         </>
       ),
       content: (
@@ -308,7 +307,7 @@ const Connected = () => {
   const isLastSlide = currentSlide === slides.length - 1;
 
   return (
-    <div className="relative pt-[80px] lg:pt-[100px] lg:pb-[120px]  rounded-[30px]  bg-cover">
+    <div className="relative pt-[80px] lg:pt-[100px] pb-[40px] lg:pb-[120px] rounded-[30px] bg-[linear-gradient(180deg,_#dedede00_0%,_#174aff4d_100%)] lg:bg-none">
       <div className="px-[16px] block lg:hidden text-center text-[14px] lg:text-[20px] font-normal text-[#9A9AB5] font-['Sharp-Grotesk-Medium']">
         <h1>
           In today’s fast-paced digital world, the difference between thriving
@@ -328,7 +327,53 @@ const Connected = () => {
         <h1>Staying connected with your</h1>
         <h1>prospects around the clock.</h1>
       </div>
-      <div className="block flex justify-center lg:hidden">
+      <div className="lg:hidden block bg-black rounded-t-[30px] flex justify-center items-center mx-[16px]">
+        <div className="px-[20px] ">
+          <div className="pb-[40px]"></div>
+          <div className="font-['Poppins'] overflow-hidden min-w-[260px] bg-white px-[10px] py-[24px] rounded-[30px] border-8 border-gray-300">
+            <div>
+              <h1 className="text-[#292930] text-[20px] font-medium leading-[25px]">
+              {slidesMobile[currentSlide].title}
+              </h1>
+            </div>
+            <div className="mt-[12px] text-[16px] text-[#999FAE] font-normal">
+            {slidesMobile[currentSlide].content}
+            </div>
+            <div className="mt-[40px]"> 
+            {isLastSlide ? (
+              <div className="flex gap-[8px]">
+                <img
+                      src={leftArrow}
+                      alt="leftArrow"
+                      onClick={handlePrevSlide}
+                      className="cursor-pointer"
+                />
+                <button onClick={handleNextSlide} className="bg-[#3662FE] text-[14px] text-[#fff] px-[10px] py-[2px] rounded-[25px]">
+                  Start Your Free Trial Today
+                </button>
+              </div>
+              ) : (
+                <div className="flex gap-[17px]"> 
+                  <img
+                    src={leftArrow}
+                    alt="leftArrow"
+                    onClick={handlePrevSlide}
+                    className="cursor-pointer"
+                  />
+                  <img
+                    src={RightArrow}
+                    alt="RightArrow"
+                    onClick={handleNextSlide}
+                    className="cursor-pointer"
+                  />
+                </div>
+              )}
+          </div>
+          </div>
+          <div className="pt-[40px]"></div>
+        </div>
+      </div>
+      <div className="px-[16px] block flex justify-center lg:hidden">
         <img src={connectedImageMobile} alt="connectedImageMobile" />
       </div>
       <div className="hidden lg:block lg:flex items-center justify-center lg:mt-[80px]">
@@ -359,46 +404,6 @@ const Connected = () => {
         </div>
         ) : (
           <div className="flex gap-[17px] ml-[25px] absolute lg:top-[75%] left-1/2 transform -translate-x-[100px] lg:-translate-x-[610px] -translate-y-1/2"> 
-            <img
-              src={leftArrow}
-              alt="leftArrow"
-              onClick={handlePrevSlide}
-              className="cursor-pointer"
-            />
-            <img
-              src={RightArrow}
-              alt="RightArrow"
-              onClick={handleNextSlide}
-              className="cursor-pointer"
-            />
-          </div>
-        )}
-      </div>
-      <div className="px-[38px] lg:hidden block">
-        <div className="absolute top-[] left-[50%] transform -translate-x-1/2 translate-y-[-1120px] font-['Poppins'] overflow-hidden min-w-[260px]">
-          <div>
-            <h1 className="text-[#292930] text-[20px] font-medium leading-[25px]">
-            {slidesMobile[currentSlide].title}
-            </h1>
-          </div>
-          <div className="mt-[12px] text-[16px] text-[#999FAE] font-normal">
-          {slidesMobile[currentSlide].content}
-          </div>
-        </div>
-        {isLastSlide ? (
-        <div className="flex gap-[8px] absolute top-[58%] left-[18%]">
-          <img
-                src={leftArrow}
-                alt="leftArrow"
-                onClick={handlePrevSlide}
-                className="cursor-pointer"
-          />
-          <button onClick={handleNextSlide} className="bg-[#3662FE] text-[14px] text-[#fff] px-[14px] py-[10px] rounded-[25px]">
-            Start Your Free Trial Today
-          </button>
-        </div>
-        ) : (
-          <div className="flex gap-[17px] absolute top-[58%] left-[18%]"> 
             <img
               src={leftArrow}
               alt="leftArrow"
