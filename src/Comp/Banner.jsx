@@ -28,7 +28,7 @@ const Banner = () => {
         {/* Centering the play button */}
         <div
           id="playButton"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+          className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
           style={{ color: "#fff", fontSize: "48px" }}
           onClick={handlePlayButtonClick}
         >
