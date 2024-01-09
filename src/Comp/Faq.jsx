@@ -21,7 +21,7 @@ const AccordionItem = ({ num, question, answer, isOpen, onToggle }) => {
         <div className="">
           <span
             onClick={toggleAccordion}
-            className="mt-[6px] lg:mb-[10px] w-8 h-8 text-gray-500 rounded-full border border-purple-500 items-center justify-center flex cursor-pointer"
+            className="lg:mb-[10px] w-8 h-8 text-gray-500 rounded-full border border-purple-500 items-center justify-center flex cursor-pointer"
           >
             {isOpen ? (
               <img src={minusFAQ} alt="minusFAQ" />
