@@ -328,47 +328,47 @@ const Connected = () => {
         <h1>prospects around the clock.</h1>
       </div>
       <div className="lg:hidden block bg-black rounded-t-[30px] flex justify-center items-center mx-[16px]">
-        <div className="px-[20px] ">
+        <div className="px-[20px]">
           <div className="pb-[40px]"></div>
-          <div className="font-['Poppins'] overflow-hidden min-w-[260px] bg-white px-[10px] py-[24px] rounded-[30px] border-8 border-gray-300">
+          <div className="font-['Poppins'] overflow-hidden min-w-[260px] bg-white px-[10px] pt-[24px] rounded-t-[30px] border-t-8 border-x-8 border-gray-300 h-[430px]">
             <div>
               <h1 className="text-[#292930] text-[20px] font-medium leading-[25px]">
               {slidesMobile[currentSlide].title}
               </h1>
             </div>
             <div className="mt-[12px] text-[16px] text-[#999FAE] font-normal">
-            {slidesMobile[currentSlide].content}
+              {slidesMobile[currentSlide].content}
             </div>
-            <div className="mt-[40px]"> 
-            {isLastSlide ? (
-              <div className="flex gap-[8px]">
-                <img
+          </div>
+          <div className="bg-white px-[12px] pb-[24px] rounded-b-[30px] border-b-8 border-x-8 border-gray-300"> 
+              {isLastSlide ? (
+                <div className="flex gap-[8px]">
+                  <img
+                        src={leftArrow}
+                        alt="leftArrow"
+                        onClick={handlePrevSlide}
+                        className="cursor-pointer"
+                  />
+                  <button onClick={handleNextSlide} className="bg-[#3662FE] text-[14px] text-[#fff] px-[10px] py-[2px] rounded-[25px]">
+                    Start Your Free Trial Today
+                  </button>
+                </div>
+                ) : (
+                  <div className="flex gap-[17px]"> 
+                    <img
                       src={leftArrow}
                       alt="leftArrow"
                       onClick={handlePrevSlide}
                       className="cursor-pointer"
-                />
-                <button onClick={handleNextSlide} className="bg-[#3662FE] text-[14px] text-[#fff] px-[10px] py-[2px] rounded-[25px]">
-                  Start Your Free Trial Today
-                </button>
-              </div>
-              ) : (
-                <div className="flex gap-[17px]"> 
-                  <img
-                    src={leftArrow}
-                    alt="leftArrow"
-                    onClick={handlePrevSlide}
-                    className="cursor-pointer"
-                  />
-                  <img
-                    src={RightArrow}
-                    alt="RightArrow"
-                    onClick={handleNextSlide}
-                    className="cursor-pointer"
-                  />
-                </div>
+                    />
+                    <img
+                      src={RightArrow}
+                      alt="RightArrow"
+                      onClick={handleNextSlide}
+                      className="cursor-pointer"
+                    />
+                  </div>
               )}
-          </div>
           </div>
           <div className="pt-[40px]"></div>
         </div>
