@@ -204,7 +204,7 @@ const FreeTrial = () => {
         {data.map((card) => (
           <div
             key={card.id}
-            className="bg-[#2F2F38] pt-[48px] pb-[48px] px-[30px] rounded-[30px] "
+            className="bg-[#2F2F38] pt-[48px] pb-[48px] px-[30px] rounded-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
           >
             <img src={card.logo} alt={`Logo ${card.id}`} className="mx-auto" />
             <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
@@ -220,7 +220,7 @@ const FreeTrial = () => {
       </div>
       <div className="hidden lg:block lg:flex justify-center gap-[24px] lg:mt-[24px]">
         {/* Card 1 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px]">
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
           <img src={thirteen} alt="Logo 1" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             User-Friendly Interface
@@ -232,7 +232,7 @@ const FreeTrial = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px]">
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
           <img src={fourteen} alt="Logo 2" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             Expert Sales Training
@@ -246,7 +246,7 @@ const FreeTrial = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px]">
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
           <img src={fifteen} alt="Logo 3" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             CRM
