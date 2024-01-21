@@ -61,18 +61,22 @@ const Meet = () => {
         </div>
       </animated.div>
 
-      <div className="block lg:hidden mt-[24px] lg:mt-[20px] text-center text-[28px] lg:text-[50px] font-medium font-['Sharp-Grotesk-Medium']">
-        <h1>
-          Meet EvolvePro.AI - The Revolutionary Chatbot Transforming How
-          Businesses Connect, Communicate, and Convert Online
-        </h1>
-      </div>
-
-      <div className="hidden lg:block lg:mt-[20px] text-center lg:text-[50px] font-medium leading-[58px] font-['Sharp-Grotesk-Medium']">
-        <h1>Meet EvolvePro.AI - The Revolutionary</h1>
-        <h1>Chatbot Transforming How Businesses</h1>
-        <h1>Connect, Communicate, and Convert Online</h1>
-      </div>
+      <animated.div style={fadeUpAnimation}>
+        <div className="block lg:hidden mt-[24px] lg:mt-[20px] text-center text-[28px] lg:text-[50px] font-medium font-['Sharp-Grotesk-Medium']">
+          <h1>
+            Meet EvolvePro.AI - The Revolutionary Chatbot Transforming How
+            Businesses Connect, Communicate, and Convert Online
+          </h1>
+        </div>
+      </animated.div>
+      
+      <animated.div style={fadeUpAnimation}>
+        <div className="hidden lg:block lg:mt-[20px] text-center lg:text-[50px] font-medium leading-[58px] font-['Sharp-Grotesk-Medium']">
+          <h1>Meet EvolvePro.AI - The Revolutionary</h1>
+          <h1>Chatbot Transforming How Businesses</h1>
+          <h1>Connect, Communicate, and Convert Online</h1>
+        </div>
+      </animated.div>
 
       <div className="lg:flex justify-center mt-[24px] lg:mt-[50px] lg:gap-[80px]">
         <img src={gifOne} alt="gifOne" />

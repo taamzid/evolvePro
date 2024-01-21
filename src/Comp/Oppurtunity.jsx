@@ -2,24 +2,42 @@ import blueLine from "../assets/blueLine.svg";
 import purpleLine from "../assets/purpleLine.svg";
 import op1 from "../assets/op1.svg";
 import op2 from "../assets/op2.svg";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const Oppurtunity = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  const fadeUpAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(-20px)",
+    config: {
+      duration: 800, // Adjust the duration as needed
+    },
+    easing: "ease-in-out",
+  });
+
   return (
-    <div className="py-[64px] lg:py-[150px]">
+    <div className="py-[64px] lg:py-[150px]" ref={ref}>
       <div className="px-[16px] lg:px-[0px] flex justify-center">
         <div>
           <h1 className="lg:text-[20px] text-[#3662FE] font-['Poppins'] font-semibold text-center lg:text-start">
             Here are a few stories of business owners...
           </h1>
-          <div className="block lg:hidden mt-[16px] font-['Sharp-Grotesk-medium'] text-[28px] text-center">
-            <h1>That had the opportunity to implement EvolvePro.AI during its early stages and used it to revolutionise their business:</h1>
-          </div>
-          <div className="hidden lg:block lg:mt-[24px] font-['Sharp-Grotesk-medium'] lg:text-[48px] leading-[62.4px]">
-            <h1>That had the opportunity to implement</h1>
-            <h1>EvolvePro.AI during its early stages</h1>
-            <h1>and used it to revolutionise their</h1>
-            <h1>business:</h1>
-          </div>
+          <animated.div style={fadeUpAnimation}>
+            <div className="block lg:hidden mt-[16px] font-['Sharp-Grotesk-medium'] text-[28px] text-center">
+              <h1>That had the opportunity to implement EvolvePro.AI during its early stages and used it to revolutionise their business:</h1>
+            </div>
+          </animated.div>
+          <animated.div style={fadeUpAnimation}>
+            <div className="hidden lg:block lg:mt-[24px] font-['Sharp-Grotesk-medium'] lg:text-[48px] leading-[62.4px]">
+              <h1>That had the opportunity to implement</h1>
+              <h1>EvolvePro.AI during its early stages</h1>
+              <h1>and used it to revolutionise their</h1>
+              <h1>business:</h1>
+            </div>
+          </animated.div>
         </div>
       </div>
       <div className="lg:flex justify-center lg:gap-[270px] lg:mt-[55px]">

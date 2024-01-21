@@ -3,8 +3,22 @@ import connectedImageMobile from "../assets/robot-connected.svg";
 import leftArrow from "../assets/LeftArrow.svg";
 import RightArrow from "../assets/RightArrow.svg";
 import { useState } from "react";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const Connected = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  const fadeUpAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(20px)",
+    config: {
+      duration: 800, // Adjust the duration as needed
+    },
+    easing: "ease-in-out",
+  });
+
   const slides = [
     {
       title: "Why EvolvePro.AI?",
@@ -307,26 +321,34 @@ const Connected = () => {
   const isLastSlide = currentSlide === slides.length - 1;
 
   return (
-    <div className="relative pt-[80px] lg:pt-[100px] pb-[40px] lg:pb-[120px] rounded-[30px] bg-[linear-gradient(180deg,_#dedede00_0%,_#174aff4d_100%)] lg:bg-none">
-      <div className="px-[16px] block lg:hidden text-center text-[14px] lg:text-[20px] font-normal text-[#9A9AB5] font-['Sharp-Grotesk-Medium']">
-        <h1>
-          In today’s fast-paced digital world, the difference between thriving
-          and merely surviving in business often comes down to one critical element:</h1>
-      </div>
-      <div className="hidden lg:block text-center lg:text-[20px] font-normal text-[#9A9AB5] font-['Sharp-Grotesk-Medium']">
-        <h1>
-          In today’s fast-paced digital world, the difference between thriving
-          and merely
-        </h1>
-        <h1>surviving in business often comes down to one critical element:</h1>
-      </div>
-      <div className="block lg:hidden px-[16px] py-[24px] text-[28px] text-center leading-[32px] font-['Sharp-Grotesk-Medium']">
-        <h1>Meet EvolvePro.AI - The Revolutionary Chatbot Transforming How Businesses Connect, Communicate, and Convert Online</h1>
-      </div>
-      <div className="hidden lg:block lg:mt-[20px] text-center lg:text-[50px] font-medium leading-[58px] font-['Sharp-Grotesk-Medium']">
-        <h1>Staying connected with your</h1>
-        <h1>prospects around the clock.</h1>
-      </div>
+    <div className="relative pt-[80px] lg:pt-[100px] pb-[40px] lg:pb-[120px] rounded-[30px] bg-[linear-gradient(180deg,_#dedede00_0%,_#174aff4d_100%)] lg:bg-none" ref={ref}>
+      <animated.div style={fadeUpAnimation}>
+        <div className="px-[16px] block lg:hidden text-center text-[14px] lg:text-[20px] font-normal text-[#9A9AB5] font-['Sharp-Grotesk-Medium']">
+          <h1>
+            In today’s fast-paced digital world, the difference between thriving
+            and merely surviving in business often comes down to one critical element:</h1>
+        </div>
+      </animated.div>
+      <animated.div style={fadeUpAnimation}>
+        <div className="hidden lg:block text-center lg:text-[20px] font-normal text-[#9A9AB5] font-['Sharp-Grotesk-Medium']">
+          <h1>
+            In today’s fast-paced digital world, the difference between thriving
+            and merely
+          </h1>
+          <h1>surviving in business often comes down to one critical element:</h1>
+        </div>
+      </animated.div>
+      <animated.div style={fadeUpAnimation}>
+        <div className="block lg:hidden px-[16px] py-[24px] text-[28px] text-center leading-[32px] font-['Sharp-Grotesk-Medium']">
+          <h1>Meet EvolvePro.AI - The Revolutionary Chatbot Transforming How Businesses Connect, Communicate, and Convert Online</h1>
+        </div>
+      </animated.div>
+      <animated.div style={fadeUpAnimation}>
+        <div className="hidden lg:block lg:mt-[20px] text-center lg:text-[50px] font-medium leading-[58px] font-['Sharp-Grotesk-Medium']">
+          <h1>Staying connected with your</h1>
+          <h1>prospects around the clock.</h1>
+        </div>
+      </animated.div>
       <div className="lg:hidden block bg-black rounded-t-[30px] flex justify-center items-center mx-[16px]">
         <div className="px-[20px]">
           <div className="pb-[40px]"></div>

@@ -2,20 +2,38 @@
 import gif from "../assets/gif.gif";
 import recImage from "../assets/recImage.svg";
 import boxImage from "../assets/boxIcon.svg";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const Unlock = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  const fadeUpAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(-20px)",
+    config: {
+      duration: 800, // Adjust the duration as needed
+    },
+    easing: "ease-in-out",
+  });
+
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <div className="bg-[#27272E] lg:bg-[url('./assets/bgG.svg')] px-[16px] lg:px-[0px] pt-[64px] lg:pt-[60px] pb-[402px] lg:pb-[125px] lg:flex justify-center lg:gap-[70px] bg-cover">
         <div className="lg:ml-[140px]">
-          <div className="block lg:hidden lg:mt-[70px] text-[28px] lg:text-[50px] font-['Sharp-Grotesk-medium'] text-[#fff] text-center">
-            <h1>Unlock the Full Power of Your Website with EvolvePro.AI</h1>
-          </div>
-          <div className="hidden lg:block lg:mt-[70px] text-[50px] font-['Sharp-Grotesk-medium'] leading-[58px] text-[#fff]">
-            <h1>Unlock the Full Power</h1>
-            <h1>of Your Website with</h1>
-            <h1>EvolvePro.AI</h1>
-          </div>
+          <animated.div style={fadeUpAnimation}>
+            <div className="block lg:hidden lg:mt-[70px] text-[28px] lg:text-[50px] font-['Sharp-Grotesk-medium'] text-[#fff] text-center">
+              <h1>Unlock the Full Power of Your Website with EvolvePro.AI</h1>
+            </div>
+          </animated.div>
+          <animated.div style={fadeUpAnimation}>
+            <div className="hidden lg:block lg:mt-[70px] text-[50px] font-['Sharp-Grotesk-medium'] leading-[58px] text-[#fff]">
+              <h1>Unlock the Full Power</h1>
+              <h1>of Your Website with</h1>
+              <h1>EvolvePro.AI</h1>
+            </div>
+          </animated.div>
           <div className="block lg:hidden text-[14px] lg:text-[18px] font-['Poppins'] mt-[24px] font-normal text-[#999FAE] text-center">
             <h1>
               Discover the Future of Business Interaction with EvolvePro.AI: A
