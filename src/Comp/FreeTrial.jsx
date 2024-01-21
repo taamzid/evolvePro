@@ -1,26 +1,75 @@
 /* eslint-disable no-irregular-whitespace */
 import one from "../assets/one.svg";
+import oneBlue from "../assets/oneBlue.svg";
 import two from "../assets/two.svg";
+import twoBlue from "../assets/twoBlue.svg";
 import three from "../assets/three.svg";
+import threeBlue from "../assets/threeBlue.svg";
 import four from "../assets/four.svg";
+import fourBlue from "../assets/fourBlue.svg";
 import five from "../assets/five.svg";
+import fiveBlue from "../assets/fiveBlue.svg";
 import six from "../assets/six.svg";
+import sixBlue from "../assets/sixBlue.svg";
 import seven from "../assets/seven.svg";
+import sevenBlue from "../assets/sevenBlue.svg";
 import eight from "../assets/eight.svg";
+import eightBlue from "../assets/eightBlue.svg";
 import nine from "../assets/nine.svg";
+import nineBlue from "../assets/nineBlue.svg";
 import ten from "../assets/ten.svg";
+import tenBlue from "../assets/tenBlue.svg";
 import eleven from "../assets/eleven.svg";
-import twolve from "../assets/twolve.svg";
+import elevenBlue from "../assets/elevenBlue.svg";
+import twelve from "../assets/twelve.svg";
+import twelveBlue from "../assets/twelveBlue.svg";
 import thirteen from "../assets/thirteen.svg";
+import thirteenBlue from "../assets/thirteenBlue.svg";
 import fourteen from "../assets/fourteen.svg";
+import fourteenBlue from "../assets/fourteenBlue.svg";
 import fifteen from "../assets/fifteen.svg";
+import fifteenBlue from "../assets/fifteenBlue.svg";
 import secondHand from "../assets/secondHand.svg";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 // import { useInView } from "react-intersection-observer";
 
 const FreeTrial = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCardT, setHoveredCardT] = useState(null);
+  const [hoveredCardF, setHoveredCardF] = useState(null);
+  const [hoveredCardFF, setHoveredCardFF] = useState(null);
+
+  const handleCardHover = (id) => {
+    setHoveredCard(id);
+  };
+
+  const handleCardHoverT = () => {
+    setHoveredCardT(true);
+  };
+  const handleCardHoverF = () => {
+    setHoveredCardF(true);
+  };
+  const handleCardHoverFF = () => {
+    setHoveredCardFF(true);
+  };
+
+  const handleCardLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const handleCardLeaveT = () => {
+    setHoveredCardT(null);
+  };
+  const handleCardLeaveF = () => {
+    setHoveredCardF(null);
+  };
+  const handleCardLeaveFF = () => {
+    setHoveredCardFF(null);
+  };
+
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -43,6 +92,7 @@ const FreeTrial = () => {
     {
       id: 1,
       logo: one,
+      logoBlue: oneBlue,
       heading: "AI-Powered Engagement",
       description: "Engages visitors with AI for",
       desc2: "enhanced customer interaction.",
@@ -50,6 +100,7 @@ const FreeTrial = () => {
     {
       id: 2,
       logo: two,
+      logoBlue: twoBlue,
       heading: "Lead Qualification  ",
       description: "Automatically qualifies leads for",
       desc2: "better conversion rates.",
@@ -57,6 +108,7 @@ const FreeTrial = () => {
     {
       id: 3,
       logo: three,
+      logoBlue: threeBlue,
       heading: "Appointment Scheduling",
       description: "Schedules appointments",
       desc2: "efficiently, improving customer",
@@ -65,6 +117,7 @@ const FreeTrial = () => {
     {
       id: 4,
       logo: four,
+      logoBlue: fourBlue,
       heading: "24/7 Availability ",
       description: "Offers round-the-clock service,",
       desc2: "never missing opportunities.",
@@ -72,6 +125,7 @@ const FreeTrial = () => {
     {
       id: 5,
       logo: five,
+      logoBlue: fiveBlue,
       heading: "Personalized Interactions",
       description: "Tailors conversations for personal",
       desc2: "touch in customer service.",
@@ -79,6 +133,7 @@ const FreeTrial = () => {
     {
       id: 6,
       logo: six,
+      logoBlue: sixBlue,
       heading: "Analytics and Reporting",
       description: "Provides insightful data for",
       desc2: "informed business decisions.",
@@ -86,6 +141,7 @@ const FreeTrial = () => {
     {
       id: 7,
       logo: seven,
+      logoBlue: sevenBlue,
       heading: "Easy Integration",
       description: "Seamlessly integrates with existing",
       desc2: "websites and platforms.",
@@ -93,6 +149,7 @@ const FreeTrial = () => {
     {
       id: 8,
       logo: eight,
+      logoBlue: eightBlue,
       heading: "Scalability",
       description: "Easily scales to match business",
       desc2: "growth and demand.",
@@ -100,6 +157,7 @@ const FreeTrial = () => {
     {
       id: 9,
       logo: nine,
+      logoBlue: nineBlue,
       heading: "Multilingual Support",
       description: "Communicates in multiple",
       desc2: "languages for broader reach.",
@@ -108,6 +166,7 @@ const FreeTrial = () => {
     {
       id: 10,
       logo: ten,
+      logoBlue: tenBlue,
       heading: "Natural Language Processing",
       description: "Understands and responds in",
       desc2: "natural, conversational language.",
@@ -115,13 +174,15 @@ const FreeTrial = () => {
     {
       id: 11,
       logo: eleven,
+      logoBlue: elevenBlue,
       heading: "Customizable AI Responses",
       description: "Allows customization of AI",
       desc2: "responses for brand alignment.",
     },
     {
       id: 12,
-      logo: twolve,
+      logo: twelve,
+      logoBlue: twelveBlue,
       heading: "Real-Time Customer Support",
       description: "Provides instant support,",
       desc2: "enhancing customer satisfaction.",
@@ -146,9 +207,11 @@ const FreeTrial = () => {
         {data.map((card) => (
           <div
             key={card.id}
-            className="bg-[#2F2F38] pt-[48px] pb-[48px] px-[30px] rounded-[30px] min-w-[342px]"
+            className="bg-[#2F2F38] pt-[48px] pb-[48px] px-[30px] rounded-[30px] min-w-[342px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+            onMouseEnter={() => handleCardHover(card.id)}
+            onMouseLeave={handleCardLeave}
           >
-            <img src={card.logo} alt={`Logo ${card.id}`} className="mx-auto" />
+            <img src={hoveredCard === card.id ? card.logoBlue : card.logo} alt={`Logo ${card.id}`} className="mx-auto" />
             <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center mt-[25px]">
               {card.heading}
             </h2>
@@ -161,8 +224,10 @@ const FreeTrial = () => {
         ))}
         <div className="block lg:hidden flex justify-center gap-[8px] lg:mt-[24px]">
          {/* Card 1 */}
-          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px]">
-            <img src={thirteen} alt="Logo 1" className="mx-auto" />
+          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+          onMouseEnter={handleCardHoverT}
+          onMouseLeave={handleCardLeaveT}>
+            <img src={hoveredCardT ? thirteenBlue : thirteen} alt="Logo 1" className="mx-auto" />
             <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center mt-[25px]">
               User-Friendly Interface
             </h2>
@@ -173,12 +238,14 @@ const FreeTrial = () => {
           </div>
 
          {/* Card 2 */}
-          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px]">
-            <img src={fourteen} alt="Logo 2" className="mx-auto" />
-            <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
+          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+          onMouseEnter={handleCardHoverF}
+          onMouseLeave={handleCardLeaveF}>
+            <img src={hoveredCardF ? fourteenBlue : fourteen} alt="Logo 2" className="mx-auto" />
+            <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center mt-[25px]">
               Expert Sales Training
             </h2>
-            <div className="text-[16px] text-[#999FAE] text-center font-['poppins'] lg:mt-[16px]">
+            <div className="text-[16px] text-[#999FAE] text-center font-['poppins'] mt-[16px]">
               <p>Expertly trained in cutting-edge</p>
               <p>sales strategies from the greatest</p>
               <p>sales books ever for superior</p>
@@ -187,12 +254,14 @@ const FreeTrial = () => {
           </div>
 
          {/* Card 3 */}
-          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px]">
-            <img src={fifteen} alt="Logo 3" className="mx-auto" />
-            <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
+          <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] min-w-[342px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+          onMouseEnter={handleCardHoverFF}
+          onMouseLeave={handleCardLeaveFF}>
+            <img src={hoveredCardFF ? fifteenBlue : fifteen} alt="Logo 3" className="mx-auto" />
+            <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center mt-[25px]">
               CRM
             </h2>
-            <div className="text-[16px] text-[#999FAE] text-center font-['poppins'] lg:mt-[16px]">
+            <div className="text-[16px] text-[#999FAE] text-center font-['poppins'] mt-[16px]">
               <h1>Integrates with CRM for streamlined</h1>
               <h1>customer relationship </h1>
               <h1>management</h1>
@@ -205,8 +274,10 @@ const FreeTrial = () => {
           <div
             key={card.id}
             className="bg-[#2F2F38] pt-[48px] pb-[48px] px-[30px] rounded-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+            onMouseEnter={() => handleCardHover(card.id)}
+            onMouseLeave={handleCardLeave}
           >
-            <img src={card.logo} alt={`Logo ${card.id}`} className="mx-auto" />
+            <img src={hoveredCard === card.id ? card.logoBlue : card.logo} alt={`Logo ${card.id}`} className="mx-auto" />
             <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
               {card.heading}
             </h2>
@@ -220,8 +291,10 @@ const FreeTrial = () => {
       </div>
       <div className="hidden lg:block lg:flex justify-center gap-[24px] lg:mt-[24px]">
         {/* Card 1 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
-          <img src={thirteen} alt="Logo 1" className="mx-auto" />
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]" 
+          onMouseEnter={handleCardHoverT}
+          onMouseLeave={handleCardLeaveT}>
+          <img src={hoveredCardT ? thirteenBlue : thirteen} alt="Logo 1" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             User-Friendly Interface
           </h2>
@@ -232,8 +305,10 @@ const FreeTrial = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
-          <img src={fourteen} alt="Logo 2" className="mx-auto" />
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+        onMouseEnter={handleCardHoverF}
+        onMouseLeave={handleCardLeaveF}>
+          <img src={hoveredCardF ? fourteenBlue : fourteen} alt="Logo 2" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             Expert Sales Training
           </h2>
@@ -246,8 +321,10 @@ const FreeTrial = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]">
-          <img src={fifteen} alt="Logo 3" className="mx-auto" />
+        <div className="bg-[#2F2F38] rounded-[30px] pt-[48px] pb-[48px] px-[30px] hover:bg-[#3662fe1a] hover:border border-[#3662FE]"
+        onMouseEnter={handleCardHoverFF}
+        onMouseLeave={handleCardLeaveFF}>
+          <img src={hoveredCardFF ? fifteenBlue : fifteen} alt="Logo 3" className="mx-auto" />
           <h2 className="text-[20px] text-white font-normal font-['Poppins'] text-center lg:mt-[25px]">
             CRM
           </h2>
